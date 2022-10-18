@@ -70,6 +70,24 @@ public class VehicleModel {
 		os.close();
 
 	}
+
+	public void addMiniBus(MiniBus miniBus) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<MiniBus> miniBuses = new ArrayList<>();
+
+		if(miniBusesFile.length() != 0) {
+			miniBuses = getMiniBuses();
+		}
+
+		miniBuses.add(miniBus);
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(miniBusesFile));
+
+		os.writeObject(miniBuses); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
 	
 	@SuppressWarnings("unchecked")
 	public ArrayList<Customer> getCustomers() throws ClassNotFoundException, FileNotFoundException, IOException {
@@ -82,6 +100,7 @@ public class VehicleModel {
 				is.close();
 	
 		return customers;
+
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -95,6 +114,7 @@ public class VehicleModel {
 				is.close();
 	
 		return cars;
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -108,6 +128,21 @@ public class VehicleModel {
 		is.close();
 
 		return lorries;
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public ArrayList<MiniBus> getMiniBuses() throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<MiniBus> miniBuses = new ArrayList<>();
+
+		ObjectInputStream is = new ObjectInputStream(new FileInputStream(miniBusesFile));
+
+		miniBuses = (ArrayList<MiniBus>)is.readObject();
+		is.close();
+
+		return miniBuses;
+
 	}
 
 	

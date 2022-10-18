@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class AddLorryView extends JFrame{
+public class AddMiniBusView extends JFrame{
 
     private static final long serialVersionUID = 1L;
 
@@ -17,7 +17,7 @@ public class AddLorryView extends JFrame{
     private JTextField topSpeed;
     private JTextField registrationNumber;
     private JTextField dailyHireRate;
-    private JTextField loadingCapacity;
+    private JTextField seatingCapacity;
 
 
     //Defining labels
@@ -27,16 +27,16 @@ public class AddLorryView extends JFrame{
     private JLabel topSpeedLabel;
     private JLabel registrationNumberLabel;
     private JLabel dailyHireRateLabel;
-    private JLabel loadingCapacityLabel;
+    private JLabel seatingCapacityLabel;
 
     //Defining button
-    private JButton addLorryButton;
+    private JButton addMiniBusButton;
     private JButton back;
 
     //AddLorryForm Constructor
-    public AddLorryView(){
+    public AddMiniBusView(){
 
-        frame= new JFrame("Add a Lorry");
+        frame= new JFrame("Add a MiniBus");
         frame.setLayout(new FlowLayout());
 
         //Setting Text Fields
@@ -45,19 +45,19 @@ public class AddLorryView extends JFrame{
         topSpeed = new JTextField(20);
         registrationNumber = new JTextField(20);
         dailyHireRate = new JTextField(20);
-        loadingCapacity = new JTextField(20);
+        seatingCapacity = new JTextField(20);
 
         //Setting Labels
-        title = new JLabel("                                                           Add Lorry Form                                                             ");
+        title = new JLabel("                                                           Add MiniBus Form                                                             ");
         makeLabel = new JLabel("Make: ");
         modelLabel = new JLabel("Model: ");
         topSpeedLabel = new JLabel("Top Speed: ");
         registrationNumberLabel = new JLabel("Registration Number: ");
         dailyHireRateLabel = new JLabel("Daily Hire Rate: ");
-        loadingCapacityLabel = new JLabel("Loading Capacity");
+        seatingCapacityLabel = new JLabel("Seating Capacity");
 
         //Setting Button
-        addLorryButton = new JButton("Add Lorry");
+        addMiniBusButton = new JButton("Add MiniBus");
         back = new JButton("Back");
 
         frame.setSize(260,450);
@@ -79,10 +79,10 @@ public class AddLorryView extends JFrame{
         frame.add(dailyHireRateLabel);
         frame.add(dailyHireRate);
 
-        frame.add(loadingCapacityLabel);
-        frame.add(loadingCapacity);
+        frame.add(seatingCapacityLabel);
+        frame.add(seatingCapacity);
 
-        frame.add(addLorryButton);
+        frame.add(addMiniBusButton);
         frame.add(back);
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -93,8 +93,8 @@ public class AddLorryView extends JFrame{
 
 
 
-    void addLorryListener(ActionListener listener) {
-        addLorryButton.addActionListener(listener);
+    void addMiniBusListener(ActionListener listener) {
+        addMiniBusButton.addActionListener(listener);
         back.addActionListener(listener);
     }
 
@@ -146,20 +146,20 @@ public class AddLorryView extends JFrame{
         this.dailyHireRate = dailyHireRate;
     }
 
-    public JTextField getLoadingCapacity() {
-        return loadingCapacity;
+    public JTextField getSeatingCapacity() {
+        return seatingCapacity;
     }
 
     public void setFuelType(JTextField loadingCapacity) {
-        this.loadingCapacity = loadingCapacity;
+        this.seatingCapacity = seatingCapacity;
     }
 
-    public JButton getAddLorryButton() {
-        return addLorryButton;
+    public JButton getAddMiniBusButton() {
+        return addMiniBusButton;
     }
 
-    public void setAddLorryButton(JButton addLorryButton) {
-        this.addLorryButton = addLorryButton;
+    public void setAddMiniBusButton(JButton addMiniBusButton) {
+        this.addMiniBusButton = addMiniBusButton;
     }
 
     public JButton getBack() {
