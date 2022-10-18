@@ -59,9 +59,9 @@ public class AddCarView extends JFrame{
 		makeLabel = new JLabel("Make: ");
 		modelLabel = new JLabel("Model: ");
 		topSpeedLabel = new JLabel("Top Speed: ");
-		registrationNumberLabel = new JLabel("Registration : ");
+		registrationNumberLabel = new JLabel("Registration Number: ");
 		dailyHireRateLabel = new JLabel("Daily Hire Rate: ");
-		fuelTypeLabel = new JLabel("Fuel Type Label");
+		fuelTypeLabel = new JLabel("Fuel Type");
 		numberOfDoorsLabel = new JLabel("Number Of Doors");
 		
 		//Setting Button
