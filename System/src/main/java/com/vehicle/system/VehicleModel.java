@@ -13,6 +13,8 @@ public class VehicleModel {
 	
 	File customersFile = new File("customers.txt");
 	File carsFile = new File("cars.txt");
+	File lorriesFile = new File("lorries.txt");
+	File miniBusesFile = new File("miniBuses.txt");
 	
 	
 	public void addCustomer(Customer customer) throws ClassNotFoundException, FileNotFoundException, IOException {
@@ -50,6 +52,24 @@ public class VehicleModel {
 		os.close();
 
 	}
+
+	public void addLorry(Lorry lorry) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<Lorry> lorries = new ArrayList<>();
+
+		if(lorriesFile.length() != 0) {
+			lorries = getLorries();
+		}
+
+		lorries.add(lorry);
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(lorriesFile));
+
+		os.writeObject(lorries); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
 	
 	@SuppressWarnings("unchecked")
 	public ArrayList<Customer> getCustomers() throws ClassNotFoundException, FileNotFoundException, IOException {
@@ -76,6 +96,20 @@ public class VehicleModel {
 	
 		return cars;
 	}
+
+	@SuppressWarnings("unchecked")
+	public ArrayList<Lorry> getLorries() throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<Lorry> lorries = new ArrayList<>();
+
+		ObjectInputStream is = new ObjectInputStream(new FileInputStream(lorriesFile));
+
+		lorries = (ArrayList<Lorry>)is.readObject();
+		is.close();
+
+		return lorries;
+	}
+
 	
 	
 
