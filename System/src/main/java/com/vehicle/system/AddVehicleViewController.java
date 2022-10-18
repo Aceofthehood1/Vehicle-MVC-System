@@ -15,6 +15,8 @@ public class AddVehicleViewController {
 	private AddCarController carController;
 	private AddLorryView lorryView;
 	private AddLorryController lorryController;
+	private AddMiniBusView busView;
+	private AddMiniBusController busController;
 	
 	
 	public AddVehicleViewController(VehicleModel model, AddVehicleView addView) {
@@ -42,6 +44,8 @@ public class AddVehicleViewController {
 					lorryController = new AddLorryController (model, lorryView);
 				}else if(e.getSource() == addView.getMiniBusButton()) {
 					addView.getFrame().setVisible(false);
+					busView = new AddMiniBusView();
+					busController = new AddMiniBusController (model, busView);
 				}
 			}
 			catch(Exception ex){
