@@ -37,7 +37,7 @@ public class AddLorryController {
                     Lorry lorry = new Lorry(make, carModel, topSpeed, registrationNumber, dailyHireRate, loadingCapacity);
 
                     if(make.equals(" ") || carModel.equals(" ") || topSpeed == 0.0 || registrationNumber.equals(" ") || dailyHireRate == 0.0 || loadingCapacity == 0 ) {
-                        JOptionPane.showMessageDialog(null, "Please type in the cars details and do not leave any fields empty");
+                        JOptionPane.showMessageDialog(null, "Please type in the lorry details and do not leave any fields empty");
                     }else {
                         model.addLorry(lorry);
                         JOptionPane.showMessageDialog(null, "Lorry has been added successfully");

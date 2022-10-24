@@ -8,6 +8,7 @@ public class MVCVehicle {
 		VehicleLoginView loginView = new VehicleLoginView();
 		VehicleModel model = new VehicleModel();
 		new VehicleController(model, loginView);
+
 	}
 
 }

@@ -38,7 +38,7 @@ public class AddMiniBusController {
 
                     if(make.equals(" ") || carModel.equals(" ") || topSpeed == 0.0 || registrationNumber.equals(" ") || dailyHireRate == 0.0 || seatingCapacity == 0 ) {
 
-                        JOptionPane.showMessageDialog(null, "Please type in the cars details and do not leave any fields empty");
+                        JOptionPane.showMessageDialog(null, "Please type in the bus details and do not leave any fields empty");
 
                     }else {
 
