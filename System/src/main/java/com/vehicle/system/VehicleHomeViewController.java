@@ -8,9 +8,9 @@ import javax.swing.JOptionPane;
 public class VehicleHomeViewController {
 	
 	private VehicleModel model;
-	private VehicleLoginView loginView;
+	private RemoveVehicleView removeView;
 	private VehicleHomeView homeView;
-	private VehicleController loginController;
+	private RemoveVehicleViewController removeController;
 	private AddVehicleView addView;
 	private AddVehicleViewController addController;
 	
@@ -34,14 +34,13 @@ public class VehicleHomeViewController {
 					addController = new AddVehicleViewController(model,addView);
 				}else if(e.getSource() == homeView.getRemoveVehiclesPageButton()){
 					homeView.getFrame().setVisible(false);
-					loginView = new VehicleLoginView();
-					loginController = new VehicleController(model, loginView);
+					removeView = new RemoveVehicleView();
+					removeController = new RemoveVehicleViewController(model, removeView);
 				}else if(e.getSource() == homeView.getQueryVehiclesPageButton()) {
 					
 				}
 			}
 			catch(Exception ex){
-				loginView.displayErrorMessage("Wrong username or password");
 			}
 		}
 		
