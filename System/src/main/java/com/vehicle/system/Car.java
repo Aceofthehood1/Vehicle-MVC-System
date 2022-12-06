@@ -31,5 +31,10 @@ public class Car extends Vehicle {
 		this.number_of_doors = number_of_doors;
 	}
 
+	public String getDetails(){
+		String details = "Make: " + getMake() + " \nModel: " + getModel() + " \nTop Speed: " + getTopSpeed() + " km/h \nRegistration Number: " + getRegistrationNumber() + " \nDaily Hire Rate: " + getDailyHireRate() + " \nFuel Type: " + getFuel_type() + " \nNumber of Doors: " + getNumber_of_doors() + " \n";
+		return details;
+	}
+
 	
 }

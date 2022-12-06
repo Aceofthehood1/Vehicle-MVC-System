@@ -58,5 +58,6 @@ public class Vehicle implements Serializable{
 	public void setDailyHireRate(double dailyHireRate) {
 		this.dailyHireRate = dailyHireRate;
 	}
+
 	
 }

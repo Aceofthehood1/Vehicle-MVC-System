@@ -145,6 +145,62 @@ public class VehicleModel {
 
 	}
 
+	public void removeCar(int index) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<Car> cars = new ArrayList<>();
+
+		if(carsFile.length() != 0) {
+			cars = getCars();
+		}
+
+		cars.remove(index);
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(carsFile));
+
+		os.writeObject(cars); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
+
+	public void removeLorry(int index) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<Lorry> lorries = new ArrayList<>();
+
+		if(lorriesFile.length() != 0) {
+			lorries = getLorries();
+		}
+
+		lorries.remove(index);
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(lorriesFile));
+
+		os.writeObject(lorries); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
+
+	public void removeMiniBus(int index) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<MiniBus> miniBuses = new ArrayList<>();
+
+		if(miniBusesFile.length() != 0) {
+			miniBuses = getMiniBuses();
+		}
+
+		miniBuses.remove(index);
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(miniBusesFile));
+
+		os.writeObject(miniBuses); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
+
+
+
 	
 	
 

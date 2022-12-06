@@ -42,22 +42,18 @@ public class VehicleController {
 					
        				for(Customer customer : customers) {
 						
-						if(username.equals(customer.getUsername()) && password.equals(customer.getPassword())) {
+						if(customer.getUsername().equals(username) && customer.getPassword().equals(password)) {
 							JOptionPane.showMessageDialog(null, "You have logged in successfully");
 							loginView.getFrame().setVisible(false);
 							homeView = new VehicleHomeView();
 							homeController = new VehicleHomeViewController(model, homeView);
 
 							break;
-						}else if(username.equals(customer.getUsername()) || !password.equals(customer.getPassword())) {
-							JOptionPane.showMessageDialog(null, "Incorrect Password");
-							break;
-						}else {
-							JOptionPane.showMessageDialog(null, "Username does not exist");
-							break;
+
 						}
 						
 					}
+
 					
 				}else if(e.getSource() == loginView.getCreateAccountButton()){
 					loginView.getFrame().setVisible(false);
