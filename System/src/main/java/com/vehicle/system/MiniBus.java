@@ -9,12 +9,16 @@ public class MiniBus extends Vehicle{
 		this.seating_capacity = seating_capacity;
 	}
 
- int getSeating_capacity() {
+ public int getSeatingCapacity() {
 		return seating_capacity;
 	}
 
-	public void setSeating_capacity(int seating_capacity) {
+	public void setSeatingCapacity(int seating_capacity) {
 		this.seating_capacity = seating_capacity;
 	}
 
+	public String getDetails(){
+		String details = "Make: " + getMake() + "\nModel: " + getModel() + "\nTop Speed: " + getTopSpeed() + " km/h \nRegistration Number: " + getRegistrationNumber() + "\nDaily Hire Rate: " + getDailyHireRate() + "\nSeating Capacity: " + getSeatingCapacity() + "\n";
+		return details;
+	}
 }

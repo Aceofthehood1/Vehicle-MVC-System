@@ -16,6 +16,7 @@ public class AddVehicleView extends JFrame{
 	private JButton carButton;
 	private JButton lorryButton;
 	private JButton miniBusButton;
+	private JButton backButton;
 
 
 	//VehicleView Constructor
@@ -30,6 +31,7 @@ public class AddVehicleView extends JFrame{
 		carButton = new JButton("Add a Car");
 		lorryButton = new JButton("Add a Lorry");
 		miniBusButton = new JButton("Add a Mini-Bus");
+		backButton = new JButton("Back");
 		
 		frame.setSize(260,250);
 		
@@ -38,6 +40,7 @@ public class AddVehicleView extends JFrame{
 		frame.add(carButton);
 		frame.add(lorryButton);
 		frame.add(miniBusButton);
+		frame.add(backButton);
 		
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -70,6 +73,9 @@ public class AddVehicleView extends JFrame{
 	public void setMiniBusButton(JButton miniBusButton) {
 		this.miniBusButton = miniBusButton;
 	}
+	public JButton getBackButton() {
+		return backButton;
+	}
 
 	public JFrame getFrame() {
 		return frame;
@@ -80,6 +86,7 @@ public class AddVehicleView extends JFrame{
 		carButton.addActionListener(listenForButtonClick);
 		lorryButton.addActionListener(listenForButtonClick);
 		miniBusButton.addActionListener(listenForButtonClick);
+		backButton.addActionListener(listenForButtonClick);
 	}
 	
 	void displayErrorMessage(String errorMessage) {

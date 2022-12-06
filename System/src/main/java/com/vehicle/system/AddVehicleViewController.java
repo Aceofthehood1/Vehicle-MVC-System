@@ -10,11 +10,12 @@ public class AddVehicleViewController {
 	private VehicleModel model;
 	private VehicleLoginView loginView;
 	private AddVehicleView addView;
-	private VehicleController loginController;
+	private VehicleHomeView homeView;
 	private AddCarView carView;
 	private AddCarController carController;
 	private AddLorryView lorryView;
 	private AddLorryController lorryController;
+	private VehicleHomeViewController homeController;
 	private AddMiniBusView busView;
 	private AddMiniBusController busController;
 	
@@ -46,6 +47,10 @@ public class AddVehicleViewController {
 					addView.getFrame().setVisible(false);
 					busView = new AddMiniBusView();
 					busController = new AddMiniBusController (model, busView);
+				}else if(e.getSource() == addView.getBackButton()) {
+					addView.getFrame().setVisible(false);
+					homeView = new VehicleHomeView();
+					homeController = new VehicleHomeViewController(model, homeView);
 				}
 			}
 			catch(Exception ex){

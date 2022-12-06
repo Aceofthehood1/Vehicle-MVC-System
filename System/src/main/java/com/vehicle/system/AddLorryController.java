@@ -14,7 +14,7 @@ public class AddLorryController {
         this.model = model;
         this.lorryView = lorryView;
 
-        this.lorryView.addLorryListener(new AddLorryController.lorryListener());
+        this.lorryView.addLorryListener(new lorryListener());
     }
 
     class lorryListener implements ActionListener {
