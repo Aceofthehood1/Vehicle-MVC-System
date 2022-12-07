@@ -13,6 +13,8 @@ public class VehicleHomeViewController {
 	private RemoveVehicleViewController removeController;
 	private AddVehicleView addView;
 	private AddVehicleViewController addController;
+	private ViewVehiclesView viewVehicle;
+	private ViewVehiclesController viewController;
 	
 	public VehicleHomeViewController(VehicleModel model, VehicleHomeView homeView) {
 		this.model = model;
@@ -37,7 +39,9 @@ public class VehicleHomeViewController {
 					removeView = new RemoveVehicleView();
 					removeController = new RemoveVehicleViewController(model, removeView);
 				}else if(e.getSource() == homeView.getQueryVehiclesPageButton()) {
-					
+					homeView.getFrame().setVisible(false);
+					viewVehicle = new ViewVehiclesView();
+					viewController =new ViewVehiclesController(model, viewVehicle);
 				}
 			}
 			catch(Exception ex){
