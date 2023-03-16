@@ -15,6 +15,7 @@ public class VehicleModel {
 	File carsFile = new File("cars.txt");
 	File lorriesFile = new File("lorries.txt");
 	File miniBusesFile = new File("miniBuses.txt");
+	File rentedVehiclesFile = new File("rented.txt");
 	
 	
 	public void addCustomer(Customer customer) throws ClassNotFoundException, FileNotFoundException, IOException {
@@ -88,6 +89,23 @@ public class VehicleModel {
 		os.close();
 
 	}
+
+	public void addRentedVehicle(RentedVehicle rentedVehicle) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<RentedVehicle> rentedVehicles = new ArrayList<>();
+
+		if(rentedVehiclesFile.length() != 0) {
+			rentedVehicles = getRentedVehicles();
+		}
+
+		rentedVehicles.add(rentedVehicle);
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(rentedVehiclesFile));
+
+		os.writeObject(rentedVehicles); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+	}
 	
 	@SuppressWarnings("unchecked")
 	public ArrayList<Customer> getCustomers() throws ClassNotFoundException, FileNotFoundException, IOException {
@@ -145,6 +163,19 @@ public class VehicleModel {
 
 	}
 
+	public ArrayList<RentedVehicle> getRentedVehicles() throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<RentedVehicle> rentedVehicles = new ArrayList<>();
+
+		ObjectInputStream is = new ObjectInputStream(new FileInputStream(rentedVehiclesFile));
+
+		rentedVehicles = (ArrayList<RentedVehicle>)is.readObject();
+		is.close();
+
+		return rentedVehicles;
+
+	}
+
 	public void removeCar(int index) throws ClassNotFoundException, FileNotFoundException, IOException {
 
 		ArrayList<Car> cars = new ArrayList<>();
@@ -199,7 +230,54 @@ public class VehicleModel {
 
 	}
 
+	public void updateCars(ArrayList<Car> cars) throws ClassNotFoundException, FileNotFoundException, IOException {
 
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(carsFile));
+
+		os.writeObject(cars); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
+
+	public void updateLorries(ArrayList<Lorry> lorries) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(lorriesFile));
+
+		os.writeObject(lorries); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
+
+	public void updateBuses(ArrayList<MiniBus> buses) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(miniBusesFile));
+
+		os.writeObject(buses); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
+
+
+	public void removeRentedVehicle(RentedVehicle rentedVehicle) throws ClassNotFoundException, FileNotFoundException, IOException {
+
+		ArrayList<RentedVehicle> rentedVehicles = new ArrayList<>();
+
+		if(rentedVehiclesFile.length() != 0) {
+			rentedVehicles = getRentedVehicles();
+		}
+
+		rentedVehicles.remove(rentedVehicle);
+
+		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(rentedVehiclesFile));
+
+		os.writeObject(rentedVehicles); //remove this so that the data would be stored to the file when the program is exited
+
+		os.close();
+
+	}
 
 	
 	

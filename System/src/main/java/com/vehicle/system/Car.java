@@ -8,9 +8,10 @@ public class Car extends Vehicle {
 	private static final long serialVersionUID = 1L;
 	private String fuel_type;
 	private int number_of_doors;
+	private boolean rented = false;
 	
-	public Car(String make, String model, double topSpeed, String registrationNumber, double dailyHireRate, String fuel_type, int number_of_doors) {
-		super(make, model, topSpeed, registrationNumber, dailyHireRate);
+	public Car(String make, String model, double topSpeed, String registrationNumber, double dailyHireRate, boolean rented, String fuel_type, int number_of_doors) {
+		super(make, model, topSpeed, registrationNumber, dailyHireRate,rented);
 		this.fuel_type = fuel_type;
 		this.number_of_doors = number_of_doors;
 	}
@@ -29,6 +30,14 @@ public class Car extends Vehicle {
 
 	public void setNumber_of_doors(int number_of_doors) {
 		this.number_of_doors = number_of_doors;
+	}
+
+	public boolean getRented(){
+		return rented;
+	}
+
+	public void setRented(boolean rented){
+		this.rented = rented;
 	}
 
 	public String getDetails(){

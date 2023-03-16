@@ -9,14 +9,16 @@ public class Vehicle implements Serializable{
 	protected double topSpeed;
 	protected String registrationNumber;
 	protected double dailyHireRate;
+	protected boolean rented;
 	
 
-	public Vehicle(String make, String model, double topSpeed, String registrationNumber, double dailyHireRate) {
+	public Vehicle(String make, String model, double topSpeed, String registrationNumber, double dailyHireRate, boolean rented) {
 		this.make = make;
 		this.model = model;
 		this.topSpeed = topSpeed;
 		this.registrationNumber = registrationNumber;
 		this.dailyHireRate = dailyHireRate;
+		this.rented = rented;
 	}
 
 	public String getMake() {
@@ -57,6 +59,14 @@ public class Vehicle implements Serializable{
 
 	public void setDailyHireRate(double dailyHireRate) {
 		this.dailyHireRate = dailyHireRate;
+	}
+
+	boolean getRented() {
+		return rented;
+	}
+
+	public void setRented(boolean rented) {
+		this.rented = rented;
 	}
 
 	

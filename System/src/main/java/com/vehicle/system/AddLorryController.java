@@ -34,7 +34,7 @@ public class AddLorryController {
                     double dailyHireRate = lorryView.getDailyHireRate().getText().isEmpty() ? 0.0 : Double.parseDouble(lorryView.getDailyHireRate().getText());
                     double loadingCapacity = lorryView.getLoadingCapacity().getText().isEmpty() ? 0 : Double.parseDouble(lorryView.getLoadingCapacity().getText());
 
-                    Lorry lorry = new Lorry(make, carModel, topSpeed, registrationNumber, dailyHireRate, loadingCapacity);
+                    Lorry lorry = new Lorry(make, carModel, topSpeed, registrationNumber, dailyHireRate,false ,loadingCapacity);
 
                     if(make.equals(" ") || carModel.equals(" ") || topSpeed == 0.0 || registrationNumber.equals(" ") || dailyHireRate == 0.0 || loadingCapacity == 0 ) {
                         JOptionPane.showMessageDialog(null, "Please type in the lorry details and do not leave any fields empty");

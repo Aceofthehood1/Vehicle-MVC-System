@@ -1,51 +1,42 @@
 package com.vehicle.system;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
-public class ViewVehiclesView extends JFrame{
+public class CustomerAccountView extends JFrame{
+
     private JFrame frame;
+
 
     //Defining Buttons
     private JButton backButton;
     private JButton showButton;
     //Defining Labels
-    private JLabel carsLabel;
-    private JLabel lorriesLabel;
-    private JLabel busesLabel;
 
-    private JTextArea carsArea;
-    private JTextArea lorriesArea;
-    private JTextArea busArea;
+    private JTextArea CustomerArea;
+    String username ;
 
     //VehicleView Constructor
-    public ViewVehiclesView(){
-
-        frame= new JFrame("View Vehicles Page");
-        FlowLayout layout = new FlowLayout();
+    public CustomerAccountView(String username){
+        this.username = username;
+        frame= new JFrame("Customer Account Page");
+        GridLayout layout = new GridLayout(3,1);
+        layout.setHgap(25);
         frame.setLayout(layout);
 
-        carsLabel = new JLabel("                    Cars");
-        lorriesLabel = new JLabel("                    Lorries");
-        busesLabel = new JLabel("                    Mini Buses");
-
-        carsArea = new JTextArea();
-        lorriesArea = new JTextArea();
-        busArea = new JTextArea();
+        CustomerArea = new JTextArea();
 
         showButton = new JButton(("Show"));
         backButton = new JButton("Back");
 
         frame.setSize(1000,600);
 
+
+
         frame.add(showButton);
+        frame.add(CustomerArea);
         frame.add(backButton);
-        frame.add(carsArea);
-        frame.add(lorriesArea);
-        frame.add(busArea);
 
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -62,21 +53,17 @@ public class ViewVehiclesView extends JFrame{
         return showButton;
     }
 
-    public JTextArea getCarsArea() {
-        return carsArea;
+    public JTextArea getCustomerArea() {
+        return CustomerArea;
     }
 
-    public JTextArea getLorriesArea() {
-        return lorriesArea;
-    }
-
-    public JTextArea getBusArea() {
-        return busArea;
+    public String getUsername(){
+        return username;
     }
 
     void viewListener(ActionListener listenForButtonClick) {
         showButton.addActionListener(listenForButtonClick);
         backButton.addActionListener(listenForButtonClick);
-
     }
+
 }
