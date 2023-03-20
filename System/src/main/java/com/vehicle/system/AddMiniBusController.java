@@ -34,7 +34,7 @@ public class AddMiniBusController {
                     double dailyHireRate = busView.getDailyHireRate().getText().isEmpty() ? 0.0 : Double.parseDouble(busView.getDailyHireRate().getText());
                     int seatingCapacity = busView.getSeatingCapacity().getText().isEmpty() ? 0 : Integer.parseInt(busView.getSeatingCapacity().getText());
 
-                    MiniBus bus = new MiniBus(make, carModel, topSpeed, registrationNumber, dailyHireRate, seatingCapacity);
+                    MiniBus bus = new MiniBus(make, carModel, topSpeed, registrationNumber, dailyHireRate, false, seatingCapacity);
 
                     if(make.equals(" ") || carModel.equals(" ") || topSpeed == 0.0 || registrationNumber.equals(" ") || dailyHireRate == 0.0 || seatingCapacity == 0 ) {
 

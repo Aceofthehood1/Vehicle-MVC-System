@@ -68,6 +68,6 @@ public class Customer implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+	//getDetails function fucks up whole program for some reason
 }

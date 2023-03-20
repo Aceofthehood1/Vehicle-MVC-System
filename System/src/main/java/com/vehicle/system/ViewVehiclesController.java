@@ -1,5 +1,6 @@
 package com.vehicle.system;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -25,35 +26,53 @@ public class ViewVehiclesController {
 
             try {
                 //details for cars
-                String carDetails = "";
+                String carDetails = "Cars \n";
                 ArrayList<Car> cars = new ArrayList<>();
                 cars = model.getCars();
+                String isCarRented ="";
+                String isLorryRented ="";
+                String isBusRented ="";
 
                 for(int i =0; i< cars.size(); i++){
-                    carDetails += cars.get(i).getDetails() + "\n";
+                    if(cars.get(i).getRented()==true){
+                        isCarRented = "Yes";
+                    }else{
+                        isCarRented = "No";
+                    }
+                    carDetails += "\n" + cars.get(i).getDetails() + "Rented : " +isCarRented+ "\n";
                     //It works but only shows when the button is pressed
                 }
 
                 viewVehicles.getCarsArea().setText(carDetails);
 
                 //details for Lorries
-                String lorryDetails = "";
+                String lorryDetails = "Lorries \n";
                 ArrayList<Lorry> lorries = new ArrayList<>();
                 lorries = model.getLorries();
 
                 for(int i =0; i< lorries.size(); i++){
-                    lorryDetails += lorries.get(i).getDetails() + "\n";
+                    if(lorries.get(i).getRented()==true){
+                        isLorryRented = "Yes";
+                    }else{
+                        isLorryRented = "No";
+                    }
+                    lorryDetails += "\n" + lorries.get(i).getDetails()  + "Rented: "+  isLorryRented + "\n";
                 }
 
                 viewVehicles.getLorriesArea().setText(lorryDetails);
 
                 //details for Mini buses
-                String busDetails = "";
+                String busDetails = "Buses \n";
                 ArrayList<MiniBus> buses = new ArrayList<>();
                 buses = model.getMiniBuses();
 
                 for(int i =0; i< buses.size(); i++){
-                    busDetails += buses.get(i).getDetails() + "\n";
+                    if(buses.get(i).getRented()==true){
+                        isBusRented = "Yes";
+                    }else{
+                        isBusRented = "No";
+                    }
+                    busDetails += "\n" + buses.get(i).getDetails() + "Rented: " + isBusRented + "\n";
                 }
 
                 viewVehicles.getBusArea().setText(busDetails);
@@ -66,6 +85,14 @@ public class ViewVehiclesController {
                 }else if(e.getSource() == viewVehicles.getShowButton()){
                     viewVehicles.getShowButton().setVisible(false);
                 }
+
+                   /*if(e.getSource() == viewVehicles.getCarButtons().get(i)){
+                        cars.get(i).setRented(false);
+                        JOptionPane.showMessageDialog(null, "Vehicles rented status status has been changed");
+                        model.updateCars(cars);
+                    }*/
+
+
             }
             catch(Exception ex){
             }

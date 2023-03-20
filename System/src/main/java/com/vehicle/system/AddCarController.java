@@ -36,7 +36,7 @@ public class AddCarController {
 					String fuelType = carView.getFuelType().getText().isEmpty() ? " " : carView.getFuelType().getText();
 					int numberOfDoors = carView.getNumberOfDoors().getText().isEmpty() ? 0 : Integer.parseInt(carView.getNumberOfDoors().getText());
 					
-					Car car = new Car(make, carModel, topSpeed, registrationNumber, dailyHireRate, fuelType, numberOfDoors);
+					Car car = new Car(make, carModel, topSpeed, registrationNumber, dailyHireRate,false, fuelType, numberOfDoors);
 					
 					if(make.equals(" ") || carModel.equals(" ") || topSpeed == 0.0 || registrationNumber.equals(" ") || dailyHireRate == 0.0 || fuelType.equals(" ") || numberOfDoors == 0 ) {
 						JOptionPane.showMessageDialog(null, "Please type in the cars details and do not leave any fields empty");

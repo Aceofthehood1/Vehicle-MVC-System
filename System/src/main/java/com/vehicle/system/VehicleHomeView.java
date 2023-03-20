@@ -15,11 +15,13 @@ public class VehicleHomeView extends JFrame{
 	private JLabel addVehiclesLabel;
 	private JLabel removeVehiclesLabel;
 	private JLabel queryVehiclesLabel;
+	private JLabel viewRentedVehiclesLabel;
 
 	//Defining Buttons
 	private JButton addVehiclesPageButton;
 	private JButton removeVehiclesPageButton;
 	private JButton queryVehiclesPageButton;
+	private JButton viewRentedVehiclesPageButton;
 	private JButton logoutButton;
 
 	//VehicleView Constructor
@@ -33,12 +35,15 @@ public class VehicleHomeView extends JFrame{
 		addVehiclesLabel = new JLabel("Add Vehicles Page: ");
 		removeVehiclesLabel = new JLabel("Remove Vehicles Page: ");
 		queryVehiclesLabel = new JLabel("View Vehicles Page");
+		viewRentedVehiclesLabel = new JLabel("View Rented Vehicles Page");
 		
-		addVehiclesPageButton = new JButton("Add Vehicles Page");
-		removeVehiclesPageButton = new JButton("Remove Vehicles Page");
-		queryVehiclesPageButton = new JButton("View Vehicles");
-		
-		frame.setSize(220,240);
+		addVehiclesPageButton = new JButton("Add Vehicles");
+		removeVehiclesPageButton = new JButton("Remove Vehicles");
+		queryVehiclesPageButton = new JButton("View all Vehicles");
+		viewRentedVehiclesPageButton = new JButton("View rented Vehicles");
+		logoutButton =  new JButton("Logout");
+
+		frame.setSize(220,320);
 		
 		frame.add(title);
 		//Links to pages for Staff members 
@@ -50,6 +55,11 @@ public class VehicleHomeView extends JFrame{
 		
 		frame.add(queryVehiclesLabel);
 		frame.add(queryVehiclesPageButton);
+
+		frame.add(viewRentedVehiclesLabel);
+		frame.add(viewRentedVehiclesPageButton);
+
+		frame.add(logoutButton);
 		
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -61,26 +71,20 @@ public class VehicleHomeView extends JFrame{
 		return addVehiclesPageButton;
 	}
 
-
-
-	public void setAddVehiclesPageButton(JButton addVehiclesPageButton) {
-		this.addVehiclesPageButton = addVehiclesPageButton;
-	}
-
 	public JButton getRemoveVehiclesPageButton() {
 		return removeVehiclesPageButton;
-	}
-
-	public void setRemoveVehiclesPageButton(JButton removeVehiclesPageButton) {
-		this.removeVehiclesPageButton = removeVehiclesPageButton;
 	}
 
 	public JButton getQueryVehiclesPageButton() {
 		return queryVehiclesPageButton;
 	}
 
-	public void setQueryVehiclesPageButton(JButton queryVehiclesPageButton) {
-		this.queryVehiclesPageButton = queryVehiclesPageButton;
+	public JButton getViewRentedVehiclesPageButton() {
+		return viewRentedVehiclesPageButton;
+	}
+
+	public JButton getLogoutButton() {
+		return logoutButton;
 	}
 
 	public JFrame getFrame() {
@@ -91,6 +95,8 @@ public class VehicleHomeView extends JFrame{
 		addVehiclesPageButton.addActionListener(listenForButtonClick);
 		removeVehiclesPageButton.addActionListener(listenForButtonClick);
 		queryVehiclesPageButton.addActionListener(listenForButtonClick);
+		viewRentedVehiclesPageButton.addActionListener(listenForButtonClick);
+		logoutButton.addActionListener(listenForButtonClick);
 	}
 	
 	void displayErrorMessage(String errorMessage) {
